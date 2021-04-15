@@ -11,7 +11,7 @@ namespace Actividad2
         public bool Asignada { get; set; }
         public Operadores OperadorOrden { get; set; }
 
-        public static List<Ordenes> listaOrdenes = new List<Ordenes>();
+        public static Dictionary<int, bool> dictOrdenes = new Dictionary<int, bool>();
 
 
 
@@ -27,7 +27,8 @@ namespace Actividad2
 
             Console.WriteLine($"Numero de orden: {num} fue generada");
 
-            listaOrdenes.Add(orden); 
+            dictOrdenes.Add(orden.NumeroOrden, orden.Asignada); 
+
             return orden;
 
         }
